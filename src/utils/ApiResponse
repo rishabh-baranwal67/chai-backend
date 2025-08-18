@@ -1,0 +1,8 @@
+class ApiResponse{ // This class is used to standardize API responses
+    constructor(statsCode, data, message = "Success"){
+        this.statusCode = statsCode;
+        this.data = data;
+        this.message = message;
+        this.success = statusCode < 400;  // Assuming success if status code is less than 400
+    }
+}
