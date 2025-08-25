@@ -1,3 +1,3 @@
-# chai aur backend series 
+# Learning Backend 
 
-this is video series on chai and backend with js
+Learning how to develop industry ready backend with JS
