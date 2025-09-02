@@ -15,4 +15,13 @@ app.use(express.static("public")) // Serve static files(pdf, images, videos etc)
 app.use(cookieParser()) // Parse cookies from incoming requests
 
 
+// routes would be added here
+import userRouter from './routes/user.routes.js'
+
+
+// routes declaration
+app.use("/api/v1/user", userRouter) // All user-related routes will be prefixed with /user
+
+//  /user will treat as a prefix for all user routes that is http://localhost:8000/api/v1/user/_____
+
 export { app } // Export the app instance for use in other files

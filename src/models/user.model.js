@@ -59,8 +59,8 @@ userSchema.methods.isPasswordCorrect = async function
     return await bcrypt.compare(password, this.password)
 } // Method to check if the provided password matches the hashed password
 
-userSchema.methods.generareAccessToken = function () {
-    return jwt.sign({
+userSchema.methods.generateAccessToken = function () { // Method to generate an access token 
+    return jwt.sign({  // Payload data for the token
         _id: this._id,
         email: this.email,
         username: this.userName,
@@ -72,9 +72,9 @@ userSchema.methods.generareAccessToken = function () {
     }
     )
 }
-userSchema.methods.generareRefreshToken = function () {
+userSchema.methods.generateRefreshToken = function () { // Method to generate a refresh token
       return jwt.sign({
-        _id: this._id,
+        _id: this._id, 
     },
     process.env.REFRESH_TOKEN_SECRET, // Secret key for signing the token
     {
